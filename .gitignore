@@ -1,0 +1,8 @@
+# dist
+dist/
+
+.babelrc
+.eslintrc
+
+# Dependency directories
+node_modules/
