@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from 'react';
 
-export default class App extends Component {
-  render() {
-    return <div>Hello world!</div>;
-  }
-}
+import Login from './Login';
+
+const App = () => (
+  <div className="formContainer">
+    <Login />
+  </div>
+);
+
+export default App;
