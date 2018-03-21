@@ -1,10 +1,14 @@
 import React from 'react';
 
 import Login from './Login';
+import HeaderNavBar from './HeaderNavBar';
 
 const App = () => (
-  <div className="formContainer">
-    <Login />
+  <div>
+    <HeaderNavBar />
+    <div className="formContainer">
+      <Login />
+    </div>
   </div>
 );
 
