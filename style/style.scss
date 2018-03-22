@@ -41,16 +41,16 @@ body {
 }
 
 .form__login {
-  width: 400px;
+  width: 50vw;
   box-shadow: -2.5px 2.5px 2px 1px #d3d3d3;
-  height: 400px;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .form__login input {
-  width: 300px;
+  width: 600px;
   margin: 5px;
 }
 
