@@ -7,7 +7,7 @@ class PollChart extends Component {
     const ctx = this.context;
 
     const myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'pie',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [
@@ -35,22 +35,27 @@ class PollChart extends Component {
         ],
       },
       options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
+        responsive: true,
       },
     });
   }
 
   render() {
     return (
-      <canvas className="pieChart" id="myChart" ref={c => (this.context = c.getContext('2d'))} /> //eslint-disable-line
+      <div className="chartContainer">
+        <h3> What is your opinion of trump?</h3>
+        <div className="pieChart">
+          <canvas
+            id="myChart"
+            ref={c => (this.context = c.getContext('2d'))} //eslint-disable-line
+          />
+        </div>
+        <div className="shareButtons">
+          <button>Share on fb</button>
+          <button>Share on twitter</button>
+          <button>Share on google</button>
+        </div>
+      </div>
     );
   }
 }

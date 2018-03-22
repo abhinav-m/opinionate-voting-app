@@ -9,10 +9,6 @@ import PollChart from './PollChart';
 //   <Login />
 // </div>
 
-const App = () => (
-  <div>
-    <PollChart />
-  </div>
-);
+const App = () => <PollChart />;
 
 export default App;
