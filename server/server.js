@@ -2,13 +2,16 @@ const express = require('express');
 
 const app = express();
 
-const landingRouter = require('./routes/LandingRouter');
+// const popularPollsRouter = require('./routes/popularPollsRouter');
+// const allpollsRouter = require('./routes/pollsRouter');
+// const newPollRouter = require('./routes/newPollRouter');
+const getPollRouter = require('./routes/getPollRouter');
 
 const port = process.env.PORT || 3000;
 
-app.use('/', landingRouter);
-app.use('/polls', allpollsRouter);
-app.use('/new', newPollRouter);
+// app.use('/', popularPollsRouter);
+// app.use('/polls', allpollsRouter);
+// app.use('/new', newPollRouter);
 app.use('/polls/', getPollRouter);
 
 app.listen(port, () => {
