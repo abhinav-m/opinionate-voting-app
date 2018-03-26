@@ -1,14 +1,19 @@
 const { Poll } = require('../db/models/Poll');
+const mongoose = require('mongoose');
+
+// FIXME: Not sending correct response, probably not able to connect to db.
 
 const getAllPolls = (req, res, next) => {
-  Poll.find()
+  debugger; //eslint-disable-line
+  Poll.find({})
     .then((polls) => {
       req.docs = polls;
       next();
     })
-    .catch(e => res.status(400).send());
+    .catch((e) => {
+      next();
+    });
 };
-
 const sendResponse = (req, res) => {
   const polls = req.docs;
   if (polls.length > 0) {
