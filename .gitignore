@@ -3,6 +3,7 @@ dist/
 
 .babelrc
 .eslintrc
+server/playground/
 
 # Dependency directories
 node_modules/
