@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const express = require('express');
 const bodyparser = require('body-parser');
 
+// const index = require('./routes/index');
+const polls = require('./routes/polls');
+const poll = require('./routes/poll');
+
 // Set up mongoose connection
 const dbUrl = 'mongodb://localhost:27017/opinionate';
 const mongoDB = process.env.MONGODB_URI || dbUrl;
@@ -16,16 +20,11 @@ const app = express();
 
 app.use(bodyparser.json());
 
-// const popularPollsRouter = require('./routes/popularPollsRouter');
-const allpollsRouter = require('./routes/pollsRouter');
-// const newPollRouter = require('./routes/newPollRouter');
-const getPollRouter = require('./routes/getPollRouter');
-
 const port = process.env.PORT || 3000;
 
-// app.use('/', popularPollsRouter);
-app.use('/polls', allpollsRouter);
-app.use('/poll', getPollRouter);
+// app.use('/', index);
+// app.use('/polls', polls);
+app.use('/poll', poll);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
