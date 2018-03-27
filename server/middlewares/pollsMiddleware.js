@@ -1,9 +1,6 @@
 const { Poll } = require('../db/models/Poll');
 
-// FIXME: Not sending correct response, probably not able to connect to db.
-
 const getAllPolls = (req, res, next) => {
-  debugger; //eslint-disable-line
   Poll.find({})
     .then((polls) => {
       req.docs = polls;

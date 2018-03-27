@@ -1,9 +1,12 @@
 const express = require('express');
 
 const { searchPoll, sendResponse } = require('../middlewares/getPollMiddleware');
+const { savePoll, sendNewResponse } = require('../middlewares/savePoll');
 
-const getPollRouter = express.Router();
+const pollRouter = express.Router();
 
-getPollRouter.get('/:id', [searchPoll, sendResponse]);
+pollRouter.post('/new', [savePoll, sendNewResponse]);
 
-module.exports = getPollRouter;
+pollRouter.get('/:id', [searchPoll, sendResponse]);
+
+module.exports = pollRouter;
